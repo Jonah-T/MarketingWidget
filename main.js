@@ -147,12 +147,13 @@
                 };
 
                 let tmpArr = [['Label', 'Value']];
+                let tmpArr2 = [['Label', 'Value']];
                 //for (var i = 0; i < NumberData.length; i++) {
                 tmpArr.push(['', NumberData[0]]);
-                tmpArr.push(['', NumberData[1]]);
+                tmpArr2.push(['', NumberData[1]]);
                 //}
-                var data = google.visualization.arrayToDataTable(tmpArr[0]);
-                var data2 = google.visualization.arrayToDataTable(tmpArr[1]);
+                var data = google.visualization.arrayToDataTable(tmpArr);
+                var data2 = google.visualization.arrayToDataTable(tmpArr2);
 
 
 
