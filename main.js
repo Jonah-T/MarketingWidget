@@ -5,6 +5,7 @@
                 div.gauge{
                     display:block;
                     width: 100%;
+                    height: 30%;
                 }
                 h1.title {
                     display:block;
