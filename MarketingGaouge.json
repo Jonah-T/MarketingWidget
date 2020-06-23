@@ -1,0 +1,50 @@
+{
+  "name": "Marketing Gauge",
+  "description": "Gauge indicator to view Marketing data",
+  "eula": "",
+  "vendor": "",
+  "license": "",
+  "id": "com.sap.sample.MRKGauge",
+  "newInstancePrefix": "MRKGauge",
+  "version": "0.0.1",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sap-sample-marketinggauge",
+      "url": "https://jonah-t.github.io/TestingLib/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "widgetData": {
+      "type": "number[]",
+      "description": "The number to insert into the Gauge"
+    },
+    "widgetLabel": {
+      "type": "string[]",
+      "description": "The Label to insert into the Gauge"
+    }
+  },
+  "methods": {
+    "setData": {
+      "description": "Set the value of the Gauge",
+      "parameters": [
+        {
+          "name": "newValue",
+          "type": "number[]",
+          "description": "The Value of the Gauge"
+        },
+        {
+          "name": "newLabel",
+          "type": "string[]",
+          "description": "The Label of the Gauge"
+        }
+      ],
+      "body": "this.widgetData = newValue;this.widgetLabel = newLabel;"
+    }
+  },
+
+  "events": {
+  }
+}
