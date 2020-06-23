@@ -112,7 +112,7 @@
 
             }
             function drawChart(shadow, NumberData, LabelData) {
-                tmpArr = [];
+                let tmpArr = [];
                 for (var i = 0; i < NumberData.length; i++) {
                     tmpArr.push([LabelData[i], NumberData[i]]);
                 }
