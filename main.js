@@ -20,6 +20,7 @@
             this._shadowRoot = this.attachShadow({ mode: "open" });
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = true;
+            this._tagContainer;
             this._numberData;
             this._LabelData;
 
@@ -112,6 +113,19 @@
 
             }
             function drawChart(shadow, NumberData, LabelData) {
+
+                if (LabelData[0] != null) {
+                    if (this._tagContainer) {
+                        this._tagContainer.parentNode.removeChild(this._tagContainer);
+                    }
+
+                    var shadow = window.getSelection(this._shadowRoot);
+                    this._tagContainer = document.createElement('h1');
+                    var theText = LabelData[0];
+                    this._tagContainer.appendChild(theText);
+                    this._shadowRoot.appendChild(this._tagContainer);
+                }
+
                 let tmpArr = [['Label', 'Value']];
                 for (var i = 0; i < NumberData.length; i++) {
                     tmpArr.push([LabelData[i], NumberData[i]]);
@@ -119,9 +133,9 @@
                 var data = google.visualization.arrayToDataTable(tmpArr);
 
                 var options = {
-                    width: 400, height: 120,
-                    redFrom: 90, redTo: 100,
-                    yellowFrom: 75, yellowTo: 90,
+                    width: 600, height: 300,
+                    redFrom: 0, redTo: 10,
+                    greenFrom: 60, greenTo: 100,
                     minorTicks: 5
                 };
 
