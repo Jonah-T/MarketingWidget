@@ -108,23 +108,24 @@
 
             if (!this._firstConnection) {
                 if (this._numberData !== undefined) {
-                    google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._tagContainer, this._numberData, this._LabelData));
+                    if (LabelData[0] != null) {
+                        if ( this._tagContainer) {
+                            this._tagContainer.parentNode.removeChild(this._tagContainer);
+                        }
+
+                        this._tagContainer = document.createElement('h1');
+                        var theText = LabelData[0];
+                        this._tagContainer.appendChild(theText);
+                        this._shadowRoot.appendChild(tagContainer);
+
+                    }
+                    google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
                 }
 
             }
             function drawChart(shadow,tagContainer, NumberData, LabelData) {
 
-                if (LabelData[0] != null) {
-                    if (tagContainer) {
-                        tagContainer.parentNode.removeChild(tagContainer);
-                    }
 
-                    var shadow = window.getSelection(shadow);
-                    this._tagContainer = document.createElement('h1');
-                    var theText = LabelData[0];
-                    this._tagContainer.appendChild(theText);
-                    this._shadowRoot.appendChild(tagContainer);
-                }
 
                 let tmpArr = [['Label', 'Value']];
                 for (var i = 0; i < NumberData.length; i++) {
