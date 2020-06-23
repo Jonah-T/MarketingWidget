@@ -4,8 +4,8 @@
 			<style>
                 div.gauge{
                     display:block;
-                    width: 100%;
-                    height: 30%;
+                    width: 50%;
+                    margin: auto;
                 }
                 h1.title {
                     display:block;
