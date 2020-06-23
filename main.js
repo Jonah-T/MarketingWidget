@@ -108,15 +108,15 @@
 
             if (!this._firstConnection) {
                 if (this._numberData !== undefined) {
-                    google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
+                    google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._tagContainer, this._numberData, this._LabelData));
                 }
 
             }
-            function drawChart(shadow, NumberData, LabelData) {
+            function drawChart(shadow,tagContainer, NumberData, LabelData) {
 
                 if (LabelData[0] != null) {
-                    if (this._tagContainer) {
-                        this._tagContainer.parentNode.removeChild(this._tagContainer);
+                    if (tagContainer) {
+                        tagContainer.parentNode.removeChild(this._tagContainer);
                     }
 
                     var shadow = window.getSelection(this._shadowRoot);
