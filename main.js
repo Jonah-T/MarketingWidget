@@ -112,7 +112,10 @@
 
             }
             function drawChart(shadow, NumberData, LabelData) {
-
+                tmpArr = [];
+                for (var i = 0; i < NumberData.length; i++) {
+                    tmpArr.push([LabelData[i], NumberData[i]]);
+                }
                 var data = google.visualization.arrayToDataTable([
                     ['Label', 'Value'],
                     ['Memory', 80],
