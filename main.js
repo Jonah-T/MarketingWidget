@@ -119,11 +119,11 @@
                         tagContainer.parentNode.removeChild(this._tagContainer);
                     }
 
-                    var shadow = window.getSelection(this._shadowRoot);
+                    var shadow = window.getSelection(shadow);
                     this._tagContainer = document.createElement('h1');
                     var theText = LabelData[0];
                     this._tagContainer.appendChild(theText);
-                    this._shadowRoot.appendChild(this._tagContainer);
+                    this._shadowRoot.appendChild(tagContainer);
                 }
 
                 let tmpArr = [['Label', 'Value']];
