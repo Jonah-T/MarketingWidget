@@ -116,7 +116,7 @@
 
                 if (LabelData[0] != null) {
                     if (tagContainer) {
-                        tagContainer.parentNode.removeChild(this._tagContainer);
+                        tagContainer.parentNode.removeChild(tagContainer);
                     }
 
                     var shadow = window.getSelection(shadow);
