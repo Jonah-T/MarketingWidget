@@ -124,7 +124,7 @@
                 }
 
             }
-            function drawChart(shadow,tagContainer, NumberData, LabelData) {
+            function drawChart(shadow, NumberData, LabelData) {
 
 
 
