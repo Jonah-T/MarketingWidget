@@ -116,12 +116,7 @@
                 for (var i = 0; i < NumberData.length; i++) {
                     tmpArr.push([LabelData[i], NumberData[i]]);
                 }
-                var data = google.visualization.arrayToDataTable([
-                    ['Label', 'Value'],
-                    ['Memory', 80],
-                    ['CPU', 55],
-                    ['Network', 68]
-                ]);
+                var data = google.visualization.arrayToDataTable(tmpArr);
 
                 var options = {
                     width: 400, height: 120,
@@ -134,7 +129,7 @@
 
                 chart_g.draw(data, options);
 
-                setInterval(function () {
+                /*setInterval(function () {
                     data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
                     chart_g.draw(data, options);
                 }, 13000);
@@ -145,7 +140,7 @@
                 setInterval(function () {
                     data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
                     chart_g.draw(data, options);
-                }, 26000);
+                }, 26000);*/
                 /////////////
             }
         }
