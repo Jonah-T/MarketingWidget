@@ -2,11 +2,20 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 			<style>
+                div.gauge{
+                    display:block;
+                }
+                h1.title {
+                    font-size:11px;                   
+                }
 				:host {
 					display: block;
 				} 
 			</style> 
-			<div id="chart_gauge"></div>
+            <h1 id="title_1" class="title"></h1>
+			<div id="chart_gauge_1" class="gauge"></div>
+            <h1 id="title_2" class="title"></h1>
+            <div id="chart_gauge_2" class="gauge"></div>
     `;
 
 
@@ -141,9 +150,13 @@
                     minorTicks: 5
                 };
 
-                var chart_g = new google.visualization.Gauge(shadow.getElementById('chart_gauge'));
+                var chart_g = new google.visualization.Gauge(shadow.getElementById('chart_gauge_1'));
+                var chart_gauge_2 = new google.visualization.Gauge(shadow.getElementById('chart_gauge_2'));
+                var title_1 = shadow.getElementById('title_1');
+                title_1.innerHTML = LabelData[0];
 
                 chart_g.draw(data, options);
+                chart_gauge_2.draw(data, options);
 
                 /*setInterval(function () {
                     data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
