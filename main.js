@@ -4,9 +4,12 @@
 			<style>
                 div.gauge{
                     display:block;
+                    width: 100%;
                 }
                 h1.title {
-                    font-size:11px;                   
+                    display:block;
+                    font-size: 32px;
+                    color: #000000;       
                 }
 				:host {
 					display: block;
@@ -136,27 +139,32 @@
             function drawChart(shadow, NumberData, LabelData) {
 
 
-
-                let tmpArr = [['Label', 'Value']];
-                for (var i = 0; i < NumberData.length; i++) {
-                    tmpArr.push([LabelData[i], NumberData[i]]);
-                }
-                var data = google.visualization.arrayToDataTable(tmpArr);
-
                 var options = {
-                    
+
                     redFrom: 0, redTo: 10,
                     greenFrom: 60, greenTo: 100,
                     minorTicks: 5
                 };
 
+                let tmpArr = [['Label', 'Value']];
+                //for (var i = 0; i < NumberData.length; i++) {
+                tmpArr.push(['', NumberData[0]]);
+                tmpArr.push(['', NumberData[1]]);
+                //}
+                var data = google.visualization.arrayToDataTable(tmpArr[0]);
+                var data2 = google.visualization.arrayToDataTable(tmpArr[1]);
+
+
+
                 var chart_g = new google.visualization.Gauge(shadow.getElementById('chart_gauge_1'));
                 var chart_gauge_2 = new google.visualization.Gauge(shadow.getElementById('chart_gauge_2'));
                 var title_1 = shadow.getElementById('title_1');
                 title_1.innerHTML = LabelData[0];
+                var title_2 = shadow.getElementById('title_2');
+                title_2.innerHTML = LabelData[1];
 
                 chart_g.draw(data, options);
-                chart_gauge_2.draw(data, options);
+                chart_gauge_2.draw(data2, options);
 
                 /*setInterval(function () {
                     data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
