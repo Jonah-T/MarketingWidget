@@ -10,7 +10,9 @@
                 h1.title {
                     display:block;
                     font-size: 32px;
-                    color: #000000;       
+                    color: #000000; 
+                    width: 100%;
+                    text-align: center;
                 }
 				:host {
 					display: block;
