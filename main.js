@@ -135,7 +135,7 @@
                 var data = google.visualization.arrayToDataTable(tmpArr);
 
                 var options = {
-                    width: 600, height: 300,
+                    
                     redFrom: 0, redTo: 10,
                     greenFrom: 60, greenTo: 100,
                     minorTicks: 5
