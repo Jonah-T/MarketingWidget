@@ -108,7 +108,8 @@
 
             if (!this._firstConnection) {
                 if (this._numberData !== undefined) {
-                    if (LabelData[0] != null) {
+                    /*
+                    if (LabelData[0] !== null) {
                         if ( this._tagContainer) {
                             this._tagContainer.parentNode.removeChild(this._tagContainer);
                         }
@@ -118,7 +119,7 @@
                         this._tagContainer.appendChild(theText);
                         this._shadowRoot.appendChild(tagContainer);
 
-                    }
+                    }*/
                     google.charts.setOnLoadCallback(drawChart(this._shadowRoot, this._numberData, this._LabelData));
                 }
 
