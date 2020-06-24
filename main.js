@@ -7,9 +7,9 @@
                     width: 50%;
                     margin: auto;
                 }
-                h1.title {
+                h1.title {  
                     display:block;
-                    font-size: 32px;
+                    font-size: 10%;
                     color: #000000; 
                     width: 100%;
                     text-align: center;
