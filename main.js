@@ -9,7 +9,7 @@
                 }
                 h1.title {  
                     display:block;
-                    font-size: 10%;
+                    font-size: 90%;
                     color: #000000; 
                     width: 100%;
                     text-align: center;
